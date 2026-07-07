@@ -407,9 +407,9 @@ function App() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b45309]">
-                    キッズモード
+                    Kids Mode
                   </p>
-                  <h2 className="text-2xl font-black text-slate-900">おつかいクエスト</h2>
+                  <h2 className="text-2xl font-black text-slate-900">Errand Quest</h2>
                 </div>
                 <div
                   className="rounded-full border border-[#fdba74] bg-white px-3 py-2 text-sm font-black text-[#b45309]"
@@ -508,7 +508,7 @@ function App() {
           <div className="rounded-[24px] bg-[#fff7ed] p-4">
             <div className="flex items-center gap-2 text-[#c2410c]">
               <Gift size={18} />
-              <h2 className="text-lg font-black">ポイントメーター</h2>
+              <h2 className="text-lg font-black">Point Meter</h2>
             </div>
             <div className="mt-3 h-3 overflow-hidden rounded-full bg-[#ffe7ca]">
               <div className="h-full rounded-full bg-[#ff7a59] transition-all" style={{ width: `${completionRate}%` }} />
