@@ -374,7 +374,7 @@ function App() {
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2 text-[#2563eb]">
                     <Share2 size={18} />
-                    <h2 className="text-lg font-black">📤 Share the list</h2>
+                    <h2 className="text-lg font-black">📤 かくにんメモをシェア</h2>
                   </div>
                   <button type="button" onClick={handleShare} className="rounded-full bg-[#2563eb] px-3 py-2 text-sm font-black text-white">
                     Share
@@ -390,7 +390,7 @@ function App() {
               <div className="rounded-[24px] border border-[#ffe0bb] bg-[#fffdf8] p-4">
                 <div className="flex items-center gap-2 text-[#c26b10]">
                   <Sparkles size={18} />
-                  <h2 className="text-lg font-black">🛍️ Current list</h2>
+                  <h2 className="text-lg font-black">🛍️ いまのかご</h2>
                 </div>
                 <ul className="mt-4 space-y-3">
                   {items.map((item) => (
@@ -407,9 +407,9 @@ function App() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b45309]">
-                    Kids Mode
+                    キッズモード
                   </p>
-                  <h2 className="text-2xl font-black text-slate-900">Errand Quest</h2>
+                  <h2 className="text-2xl font-black text-slate-900">おつかいクエスト</h2>
                 </div>
                 <div
                   className="rounded-full border border-[#fdba74] bg-white px-3 py-2 text-sm font-black text-[#b45309]"
@@ -419,13 +419,13 @@ function App() {
                   onTouchStart={startGuardHold}
                   onTouchEnd={stopGuardHold}
                 >
-                  👆 Hold to go back
+                  👆 ちょっとだけ長押し
                 </div>
               </div>
 
               <div className="mt-5 rounded-[28px] bg-white p-4">
                 <div className="flex items-center justify-between text-sm font-semibold text-slate-500">
-                  <span>Progress</span>
+                  <span>進みぐあい</span>
                   <span>{foundIds.length}/{items.length}</span>
                 </div>
                 <div className="mt-2 h-4 overflow-hidden rounded-full bg-[#ffe1b3]">
@@ -442,8 +442,8 @@ function App() {
                     </>
                   ) : (
                     <div className="text-center text-slate-600">
-                      <p className="text-xl font-black">🧺 The list is empty</p>
-                      <p className="mt-2 text-sm">Ask a grown-up to add the first item</p>
+                      <p className="text-xl font-black">🧺 まだリストがないよ</p>
+                      <p className="mt-2 text-sm">おうちの人に 1つずつ 追加してもらおう</p>
                     </div>
                   )}
                 </div>
@@ -454,7 +454,7 @@ function App() {
                     onClick={handleFound}
                     className="mt-5 w-full rounded-[24px] bg-[#4f46e5] px-4 py-4 text-2xl font-black text-white shadow-[0_10px_30px_rgba(79,70,229,0.3)]"
                   >
-                    ✅ Found it!
+                    ✅ みつけた！
                   </button>
                 ) : null}
 
@@ -465,14 +465,14 @@ function App() {
                       onClick={handleSpinRoulette}
                       className="w-full rounded-[24px] bg-[#ef4444] px-4 py-4 text-2xl font-black text-white"
                     >
-                      🎲 Spin the wheel
+                      🎲 ルーレットをまわす
                     </button>
                     <AnimatePresence>
                       {celebrate ? (
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="rounded-[24px] bg-[#fff1f2] p-4 text-center">
                           <div className="flex items-center justify-center gap-2 text-[#dc2626]">
                             <Trophy size={20} />
-                            <span className="text-xl font-black">🎉 You did it!</span>
+                            <span className="text-xl font-black">🎉 できた！</span>
                           </div>
                           <p className="mt-2 text-sm text-slate-700">A small digital prize for finishing the mission</p>
                         </motion.div>
@@ -508,7 +508,7 @@ function App() {
           <div className="rounded-[24px] bg-[#fff7ed] p-4">
             <div className="flex items-center gap-2 text-[#c2410c]">
               <Gift size={18} />
-              <h2 className="text-lg font-black">Point Meter</h2>
+              <h2 className="text-lg font-black">🌟 てんメーター</h2>
             </div>
             <div className="mt-3 h-3 overflow-hidden rounded-full bg-[#ffe7ca]">
               <div className="h-full rounded-full bg-[#ff7a59] transition-all" style={{ width: `${completionRate}%` }} />
@@ -517,14 +517,14 @@ function App() {
           </div>
 
           <div className="mt-4 rounded-[24px] bg-[#f5f3ff] p-4">
-            <p className="text-sm font-black text-[#4f46e5]">🧑‍🦳 Parent note</p>
+            <p className="text-sm font-black text-[#4f46e5]">🧑‍🦳 おうちの人メモ</p>
             <p className="mt-2 text-sm text-slate-700">
               The kid view keeps the experience simple with big visual buttons and only allows a return to parent mode through a long press or a small math check.
             </p>
           </div>
 
           <div className="mt-4 rounded-[24px] border border-dashed border-[#f2c38a] p-4">
-            <p className="text-sm font-black text-[#a16207]">📢 Ad space placeholder</p>
+            <p className="text-sm font-black text-[#a16207]">📢 こうかくスペース</p>
             <div className="mt-3 rounded-2xl bg-[#fff8ef] p-3 text-sm text-slate-600">
               This space can later hold family-safe, privacy-friendly ads.
             </div>
