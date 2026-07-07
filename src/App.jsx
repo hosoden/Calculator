@@ -227,7 +227,7 @@ function App() {
 
   const confirmExit = (event) => {
     event.preventDefault()
-    if (Number(guardAnswer) === guardTarget) {
+    if (Number(guardAnswer) === guardTarget + 2) {
       setMode('parent')
       setGuardOpen(false)
       setGuardAnswer('')
