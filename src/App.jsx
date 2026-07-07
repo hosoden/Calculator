@@ -170,6 +170,11 @@ function App() {
     setItems((prev) => [newItem, ...prev])
   }
 
+  const handleRemoveItem = (itemId) => {
+    setItems((prev) => prev.filter((item) => item.id !== itemId))
+    setFoundIds((prev) => prev.filter((id) => id !== itemId))
+  }
+
   const handleShare = async () => {
     const joined = items.map((item) => item.name).join(',')
     const nextUrl = `${window.location.origin}${window.location.pathname}?share=${encodeURIComponent(joined)}`
@@ -394,9 +399,18 @@ function App() {
                 </div>
                 <ul className="mt-4 space-y-3">
                   {items.map((item) => (
-                    <li key={item.id} className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm">
-                      {item.image ? <img src={item.image} alt={item.name} className="h-12 w-12 rounded-xl object-cover" /> : <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#fff1e5] text-[#ff7a59]">{getItemEmoji(item.name)}</div>}
-                      <span className="font-bold text-slate-800">{item.name}</span>
+                    <li key={item.id} className="flex items-center justify-between gap-3 rounded-2xl bg-white p-3 shadow-sm">
+                      <div className="flex items-center gap-3">
+                        {item.image ? <img src={item.image} alt={item.name} className="h-12 w-12 rounded-xl object-cover" /> : <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#fff1e5] text-[#ff7a59]">{getItemEmoji(item.name)}</div>}
+                        <span className="font-bold text-slate-800">{item.name}</span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveItem(item.id)}
+                        className="rounded-full bg-[#ffe4db] px-3 py-2 text-sm font-black text-[#c2410c]"
+                      >
+                        削除
+                      </button>
                     </li>
                   ))}
                 </ul>
