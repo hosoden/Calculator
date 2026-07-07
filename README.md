@@ -1,16 +1,21 @@
-# React + Vite
+# おつかいサポート
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Render Static Site での公開手順
 
-Currently, two official plugins are available:
+このプロジェクトは Vite の静的ビルド成果物を配信する構成に対応しています。無料枠で公開したい場合は、Render の Static Site としてデプロイしてください。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Render の設定
+- Create a Static Site を選択
+- Build Command:
+  ```bash
+  npm install && npm run build
+  ```
+- Publish Directory:
+  ```bash
+  dist
+  ```
 
-## React Compiler
+### 補足
+- Start Command は Static Site では不要です。
+- Basic 認証は Static Site では標準では対応しません。もし認証が必要な場合は Web Service に切り替える必要があります。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
